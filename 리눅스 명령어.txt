@@ -1,0 +1,70 @@
+폴더 구조 보기
+ - ls
+하위 폴더 이동
+ - cd 폴더명
+상위 폴더 이동
+ - cd ..
+패키지 업데이트
+ - sudo apt-get update -y
+자바 설치
+ - sudo apt-get install openjdk-8-jdk
+자바 버전 확인
+ - java -version
+링크된 자바 경로 확인
+ - which java
+실제 자바 경로 확인
+ - readlink -f /usr/bin/java
+  (/usr/lib/jvm/java-8-openjdk-amd64/jre)
+
+환경변수 파일 편집 전에 
+ls 
+profile_bk (back파일 만들어서 문제 생겼을 때 되돌릴 수 있게 만들어놓기)
+환경변수 파일 편집
+ - sudo vi /etc/profile
+vi 편집기
+ - i 누르면 편집모드로 전환
+ - 편집모드에서 esc 누르면 기본 모드로 전환
+ - 기본 모드에서 :q! 엔터 -> 저장하지 않고 종료
+환경변수 등록
+ - 입력모드 상태에서 
+ - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+   export PATH=$PATH:$JAVA_HOME/bin
+ - 입력 후 esc 눌러서 기본 모드로 전환
+ - :wq 저장 후 종료
+수정한 환경변수 업데이트(적용)
+ - source /etc/profile
+환경변수 확인
+ - echo $JAVA_HOME
+톰캣 설치 폴더로 이동
+ - cd  /home/ubuntu
+톰캣 다운로드
+ - sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.70/bin/apache-tomcat-8.5.70.tar.gz
+다운받은 톰캣 압축 해제
+ - sudo tar -zvxf apache-tomcat-8.5.70.tar.gz
+관리자 권한 얻기
+ - sudo su root
+리눅스에서는 sh스크립트 파일로 실행
+윈도우는 bat파일로 실행
+톰캣 실행 폴더 접근
+ - cd /home/ubuntu/apache-tomcat-8.5.70/bin
+톰캣 실행하기
+ - sh startup.sh
+톰캣 구동확인
+ - http://퍼블릭ip:8080
+톰캣 구동확인 명령어
+ - ps -ef | grep tomcat
+톰캣 로그 폴더 접근
+ - cd /home/ubuntu/apache-tomcat-8.5.70/logs
+톰캣 실시간 로그 확인
+ - tail -f catalina.out
+톰캣 실시간 로그 종료
+ - ctrl + c
+톰캣 실행 폴더 접근
+ - cd /home/ubuntu/apache-tomcat-8.5.70/bin
+톰캣 종료
+ - sh shutdown.sh
+
+
+맥 터미널 접속방법
+1. 맥 터미널에서 .pem 폴더로 이동
+2. ssh -i 키페어.pem ubuntu@퍼블릭ip

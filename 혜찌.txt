@@ -1,0 +1,15 @@
+새로운 인스턴스
+키페어 다운로드
+HTTP, ORACLE, 사용자 정의 ... 위의 주소 복사해서 만들기
+
+putty gen 실행
+load에 키페어..
+save private key
+.ppk파일 생성
+
+aws에서 인스턴스 id 연결
+ssh클라이언트
+"부터 끝까지 아이피주소 복사
+Putty실행>hostname에 ip주소 붙여넣기>saved sesstions에 이름
+ssh+Auth에 Browse 클릭> select private key file 창에서 .ppk파일 선택>sesstion>save>open
+
